@@ -32,3 +32,10 @@ sub.loadURL(`https://www.facebook.com/v8.0/dialog/oauth?client_id={facebook_app_
 make
 ```
 执行完成只会，会发现在 `electron/dist` 目录中会生成 `windows` 和 `mac` 版本
+#### 使用
+如果网络处于被墙状态，需要自备 `vpn` 然后开启本地 `http` 代理，然后在软件中设置即可
+![](docs/proxy_setting.jpg)
+1. `clashx`，可以看到端口为 `7890`，则设置为 `http://127.0.0.1:7890`
+![](docs/clash_proxy_port.jpg)
+2. `shadowsocks`，可以看到端口为 `1087`，需要将 `shadowsocks` 的本地 `http` 打开，则设置代理地址为 `http://127.0.0.1:1087`
+![](docs/ss_setting.jpg)
