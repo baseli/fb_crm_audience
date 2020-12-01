@@ -1,0 +1,53 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "fb crm audience upload",
+  "author": "liwd0203@gmail.com",
+  "private": true,
+  "scripts": {
+    "dev": "electron .",
+    "package": "electron-builder --win",
+    "package-mac": "electron-builder"
+  },
+  "build": {
+    "appId": "com.liwd.fb",
+    "copyright": "liwd",
+    "productName": "fb_audience",
+    "asar": false,
+    "win": {
+      "icon": "test.png",
+      "target": "nsis",
+      "legalTrademarks": "facebook custom audience"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "menuCategory": true,
+      "allowElevation": false,
+      "deleteAppDataOnUninstall": true
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "test.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {}
+}
