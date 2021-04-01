@@ -9,7 +9,7 @@ type AdAccount struct {
 	Name			string	`json:"name"`
 	AccountId		string	`json:"account_id"`
 	AccountStatus	int		`json:"account_status"`
-	Owner			string	`json:"owner"`
+	Owner			string	`json:"owner,omitempty"`
 }
 
 type pager struct {
@@ -30,7 +30,7 @@ func GetAdAccounts(accountId string, accessToken string) (*adAccountPagination, 
 	}
 
 	res, err := req.Get(buildGraphUrl("/" + accountId + "/adaccounts", map[string]string{
-		"fields": "id,name,account_id,account_status,owner",
+		"fields": "id,name,account_id,account_status",
 		"access_token": accessToken,
 		"limit": "200",
 	}))
